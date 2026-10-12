@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign-up</title>
+    <meta name="description" content="Create an account with Marginalia, and start actually thinking about the books you've read.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="color-scheme" content="dark light">
+    <script src="../js/theme-init.js"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><style>path{fill:%23465775}@media(prefers-color-scheme:dark){path{fill:%23a5b4fc}}</style><path d='M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 12l-10-5v2l10 5 10-5v-2l-2.5 1.25L12 11zm0 5l2.5-1.25L12 17l-10-5v2l10 5 10-5v-2l-2.5 1.25L12 16z'/></svg>">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./signup.css">
+    <script>window.APPWRITE_ENDPOINT = 'https://nyc.cloud.appwrite.io/v1';</script>
+    <script defer src="https://cdn.jsdelivr.net/npm/appwrite@21.4.0"></script>
+    <script type="module" src="../js/main.js"></script>
+</head>
+<body class="auth-page signup-page">
+    <div class="theme-toggle-shell">
+        <label class="theme-toggle" for="dmToggle" title="Toggle Dark Mode" aria-label="Toggle dark mode">
+            <input type="checkbox" id="dmToggle" class="dm-toggle">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" class="dm-icon" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </label>
+    </div>
+
+    <main class="card auth-card signup-card" role="main" aria-labelledby="signup-heading">
+        <h1 id="signup-heading">Create account</h1>
+        <p class="lead">Get your Marginalia account ready in under a minute.</p>
+        <form id="signupForm" action="#" method="post" novalidate>
+            <div class="input-wrapper">
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder=" " />
+                <label for="email">E-mail address</label>
+            </div>
+
+            <div class="input-wrapper">
+                <input id="password" name="password" type="password" minlength="8" autocomplete="new-password" required placeholder=" " />
+                <label for="password">Password</label>
+                <button type="button" class="icon-btn toggle-btn" data-toggle="password" aria-pressed="false" title="Show password">Show</button>
+                <div class="helper">Minimum of 8 characters.</div>
+            </div>
+
+            <div class="input-wrapper">
+                <input id="confirmPassword" name="confirmPassowrd" type="password" minlength="8" autocomplete="new-password" required placeholder=" " />
+                <label for="confirmPassword">Confirm password</label>
+                <button type="button" class="icon-btn toggle-btn" data-toggle="confirmPassword" aria-pressed="false" title="Show confirm password">Show</button>
+            </div>
+
+            <div id="pwMismatch" class="error" role="alert" aria-live="polite" style="display:none;">Passwords do not match.</div>
+
+            <button id="submitBtn" class="btn" type="submit" disabled>Sign up</button>
+
+            <div id="create-account">
+                Already have an account? <a href="../login/index.html" class="muted-link">Sign in</a>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

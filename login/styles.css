@@ -1,0 +1,24 @@
+#login-options {
+    margin: 0.25rem 0 .5rem;
+}
+
+.input-wrapper:nth-child(2) {
+    margin-bottom: .5rem;
+}
+
+.login-options-row {
+    margin-top: 0.25rem;
+}
+
+#formError {
+    min-height: 1.25rem;
+    text-align: center;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 5;
+}

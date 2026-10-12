@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang ="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Sign In </title>
+    <meta name="description" content="Sign in to acess your reading list and book journal.">
+    <meta name ="robots" content="noindex, nofollow">
+    <meta name="color-scheme" content="dark light">
+    <script src="../js/theme-init.js"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><style>path{fill:%23465775}@media(prefers-color-scheme:dark){path{fill:%23a5b4fc}}</style><path d='M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 12l-10-5v2l10 5 10-5v-2l-2.5 1.25L12 11zm0 5l2.5-1.25L12 17l-10-5v2l10 5 10-5v-2l-2.5 1.25L12 16z'/></svg>">
+    <link rel ="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./login.css">
+    <script>window.APPWRITE_ENDPOINT = 'https://nyc.cloud.appwrite.io/v1';</script>
+    <script defer src="https://cdn.jsdelivr.net/npm/appwrite@21.4.0"></script>
+    <script type="module" src="../js/main.js"> </script>
+</head>
+<body class="auth-page login-page">
+    <div class="theme-toggle-shell">
+        <label class="theme-toggle" for="dmToggle" title="Toggle Dark Mode" aria-label="Toggle dark mode">
+            <input type="checkbox" id="dmToggle" class="dm-toggle">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" class="dm-icon" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </label>
+    </div>
+
+    <main class="card auth-card login-card" role="main" aria-labelledby="signin-heading">
+    <h1 id="signin-heading">Sign-In</h1>
+    <p class ="lead">Welcome back. Enter your account details to continue.</p>
+
+    <form id="loginForm" action="#" method="post" novalidate>
+        <div class="input-wrapper">
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder=" " inputmode="email" aria describedby="emailHelp" />
+            <label for="email">E-mail Adress</label>
+            <div id="emailHelp" class="helper" aria-hidden="true">We will never share your e-mail.</div>
+        </div>
+
+        <div class="input-wrapper">
+            <input id="password" name="password" type="password" autocomplete="current-password" required minlength="8" placeholder=" " aria-describedby="passwordHelp" />
+            <label for="password">Password</label>
+            <div id="emailHelp" class="helper" aria-hidden="true">We will never share your e-mail</div>
+        </div>
+
+        <div class="input-wrapper">
+            <input id="password" name="password" type="password" autocomplete="current-password" required minlength="8" placeholder=" " aria-describedby="passwordHelp" />
+            <label for="password">Password</label>
+            <button type="button" id="togglePassword" class="icon-btn toggle-btn" aria-pressed="false" title="Show password">Show</button>
+            <div id="passwordHelp" class="helper">Minimum of 8 characters.</div>
+        </div>
+
+        <div id="login-options" class="row login-options-row">
+            <label class="checkbox">
+                <input type="checkbox" id="remember" name="remember" />
+                <span class="checkbox-custom" aria-hidden="true"></span>
+                <span> Remember me</span>
+            </label>
+            <a class="muted-link" href="#" onClick="alert('Please contact support if you wish to change your password.')">Forgot password?</a>
+        </div>
+
+        <div>
+            <button class="btn" type="submit">Sign in</button>
+        <div>
+
+        <div id="create-account">
+            New to Marginalia? <a href="../signup/index.html" class="muted-link">Create an account</a>
+        </div>
+
+        <div id="formError" class="error" role="alert" aria-live="assertive" style="display:none"></div>
+    </form>
+</main>
+</body>
+</html>

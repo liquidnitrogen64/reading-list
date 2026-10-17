@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+:root {
+    --font-heading: 'Cinzel', 'Georgia', serif;
+    --font-body: 'Crimson Pro', 'Garamond', 'Georgia', serif;
+    --font-ui: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+    --bg-main: #fcf9f2;
+    --bg-card: #ffffff;
+    --text-main: #2b2623;
+    --text-muted: #6e675f;
+    --border-color: #e8e2d5;
+
+    --accent-primary: #8c3a2b;
+    --accent-hover: #6f2d21;
+    --accent-subtle: #f4ede2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-famiily: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    margin-top: 0;
+}
+
+button, input, label, .btn, .btn-outline, .helper {
+    font-family: var(--font-ui);
+}
+
+/*Base Header*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    Padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-card);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/*landing page layout*/

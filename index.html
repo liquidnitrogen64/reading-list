@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marginalia: Read Intelligently</title>
+    <meta name="description" content="The place where you can track the books you want to read, the ones you have read, and what insights you have gained from reading.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sharmnzero.github.io/reading-list/">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="color-scheme" content="dark light">
+    <script src="js/theme.init.js"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><style>path{fill:%23465775}@media(prefers-color-scheme:dark){path{fill:%23a5b4fc}}</style><path d='M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 12l-10-5v2l10 5 10-5v-2l-2.5 1.25L12 11zm0 5l2.5-1.25L12 17l-10-5v2l10 5 10-5v-2l-2.5 1.25L12 16z'/></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/appwrite@21.40"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="landing.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+    <header>
+        <i class="fas fa-layer-group"></i> Marginalia
+        <div style="display:flex; align-items:center; gap:1rem;">
+            <label style="cursor:pointer; display:flex; align-items:center;" title="Toggle Dark Mode">
+                <input type="checkbox" id="dmToggle" class="dm-Toggle" class="dm-toggle" style="display:none">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" class="dm-icon" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </label>
+            <a href="login/index.html" class="btn-outline" style="text-decoration:none; white-space:nowrap;">Log in</a>
+            <a href="signup/index.html" class="btn primary" style="text-decoration:none; width:auto;">Sign Up</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Read Intelligently</h1>
+            <p class="lead">Your book list, prompted reading journal, and reading stats all in one place.</p>
+            <div class="cta-group">
+                <a href="signup/index.html" class="btn primary" style="font-size:1.1rem; padding: 0.8rem 2rem; width:auto; text-decoration:none;">Get Started</a>
+            </div>
+        </section>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-magic"></i></div> <!--change the fa-magic to a different icon later.-->
+                <h3>Interactive List</h3>
+                <p style="color:var(--muted)">Make a reading list and tag the books inside to easily find your perfect next read.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-calendar-day"></i></div> <!--change the fa-calendar-day to a different icon later.-->
+                <h3>Book Status</h3>
+                <p style="color:var(--muted)">Keep track of the books you have read, are reading, and want to read. Jot down notes to help remember where you are in your books.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-stopwatch"></i></div> <!--change the fa-stopwatch to a different icon later.-->
+                <h3>Insight Library</h3>
+                <p style="color:var(--muted)">Once you have finished a book, write down the knowledge and perspective you've gained. Keep all of your insights in an interactive bookshelf.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

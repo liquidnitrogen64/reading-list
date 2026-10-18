@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Marginalia</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="../js/theme.js"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%238c3a2b' d='M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.1-1.3 4.85-1.4 1.25-.07 2.45.1 3.55.55.1.05.2.05.3.05.25 0 .5-.25.5-.5V6c-.6-.4-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z'/></svg>">
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script>
+    (function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    })();
+</script>
+<script defer src="./js/theme.js"></script>
+</head>
+
+<body class="dashboard-body">
+    <!--navigation header-->>
+    <header class="dashboard-header">
+        <div class="brand">
+            <i class="fas fa-layer-group"></i> Marginalia
+            </div>
+        <nav class="nav-links">
+                <a href="./index.html" class="active">Dashboard</a>
+                <a href="../library/index.html">Library</a>
+                <button id="logoutBtn" class="btn-outline">Log Out</button>
+        </nav>
+    </header>
+    <!--grid layout-->
+    <main class="dashboard-grid">
+        <!--left column-->
+        <div class="left-column">
+            <section class="card status-section">
+                <h2><i class="fas fa-book-open"></i>Currently Reading</h2>
+                <div id="currentlyReadingContainer" class="status-container">
+                    <!--js deals with the list-->
+                    <p class="empty-state">No books in progress. Drag or move one from your reading list!</p>
+                </div>
+            </section>
+
+            <!--fav bookself-->
+            <section class="card bookshelf-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bookmark"></i>Favorites</h2>
+                    <a href="../library/index.html" class="muted-link">View Full Library &rarr;</a>
+                </div>
+                <div id="bookshelfGrid" class="bookshelf-grid">
+                    <!--fav books show up here-->
+                    <p class="empty-state">Your favorite books and reflections will show up here!</p>
+                </div>
+            </section>
+        </div>
+
+        <!--reading list part yk-->
+        <section class="card reading-list-section">
+            <div class="section-header">
+                <h2><i class="fas fa-list"></i>Want to Read</h2>
+                <button id="addBookBtn" class="btn primary"><i class="fas fa-plus"></i>Add Book</button>
+            </div>
+
+            <!--tag filter bar-->
+            <div class=tag-filter-bar id="tagFilters">
+                <button class="tag-chip active" data-tag="all">All</button>
+                <button class="tag-chip" data-tag="Fiction">Fiction</button>
+                <button class="tag-chip" data-tag="Non-Fiction">Non-Fiction</button>
+                <button class="tag-chip" data-tag="Romance">Romance</button>
+                <button class="tag-chip" data-tag="Mystery">Mystery</button>
+                <button class="tag-chip" data-tag="Thriller">Thriller</button>
+                <button class="tag-chip" data-tag="Fantasy">Fantasy</button>
+                <button class="tag-chip" data-tag="Sci-Fi">Sci-Fi</button>
+                <button class="tag-chip" data-tag="Biography">Biography</button>
+                <button class="tag-chip" data-tag="Memoir">Memoir</button>
+                <button class="tag-chip" data-tag="Personal Growth">Personal Growth</button>
+                <button class="tag-chip" data-tag="History">History</button>
+                <button class="tag-chip" data-tag="Philosophy">Philosophy</button>
+                <button class="tag-chip" data-tag="Poetry">Poetry</button>
+                <button class="tag-chip" data-tag="Classic">Classic</button>
+            </div>
+
+            <!--book cards list-->
+            <div id="readingListContainer" class="reading-list-container">
+                <!--its a container for a reason lol-->
+            </div>
+        </section>
+    </main>
+
+    <!--reflect on ur learn-->
+    <div id="reflectionModal" class="modal-backdrop" style="display:none;">
+        <div class="card modal-card">
+            <h2><i class="fas fa-feather-pointed"></i>Reflect on Your Read</h2>
+            <p class="lead" id="modalBookTitle">Book Title</p>
+
+            <!--questions-->
+            <form id="reflectionForm">
+               <div id="dynamicQuestions"></div>
+
+               <div class="destination-choice">
+                    <label>Where should this reflection live?</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="destination" value="dashboard" checked>
+                            Favorites Bookshelf
+                        </label>
+                        <label>
+                            <input type="radio" name="destination" value="library">
+                            Library Archive
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancelModalBtn" class="btn-outline">Cancel</button>
+                    <button type="submit" class="btn primary">Save Reflection</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

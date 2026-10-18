@@ -13,16 +13,26 @@
     <meta name="theme-color" content="#4f46e5">
     <meta name="color-scheme" content="dark light">
     <script src="js/theme.init.js"></script>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><style>path{fill:%23465775}@media(prefers-color-scheme:dark){path{fill:%23a5b4fc}}</style><path d='M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 12l-10-5v2l10 5 10-5v-2l-2.5 1.25L12 11zm0 5l2.5-1.25L12 17l-10-5v2l10 5 10-5v-2l-2.5 1.25L12 16z'/></svg>">
+   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%238c3a2b' d='M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.1-1.3 4.85-1.4 1.25-.07 2.45.1 3.55.55.1.05.2.05.3.05.25 0 .5-.25.5-.5V6c-.6-.4-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z'/></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/appwrite@21.40"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="landing.css">
+    <script defer src="./js/theme.js"></script>
     <script type="module" src="js/main.js"></script>
+    <script>
+    (function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    })();
+</script>
+<script defer src="./js/theme.js"></script>
 </head>
 <body>
     <header>
-        <i class="fas fa-layer-group"></i> Marginalia
+        <i class="fas fa-book-open"></i> Marginalia
         <div style="display:flex; align-items:center; gap:1rem;">
             <label style="cursor:pointer; display:flex; align-items:center;" title="Toggle Dark Mode">
                 <input type="checkbox" id="dmToggle" class="dm-Toggle" class="dm-toggle" style="display:none">
@@ -44,17 +54,17 @@
 
         <section class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-magic"></i></div> <!--change the fa-magic to a different icon later.-->
+                <div class="feature-icon"><i class="fas fa-tags"></i></div>
                 <h3>Interactive List</h3>
                 <p style="color:var(--muted)">Make a reading list and tag the books inside to easily find your perfect next read.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-calendar-day"></i></div> <!--change the fa-calendar-day to a different icon later.-->
+                <div class="feature-icon"><i class="fas fa-bookmark"></i></div>
                 <h3>Book Status</h3>
                 <p style="color:var(--muted)">Keep track of the books you have read, are reading, and want to read. Jot down notes to help remember where you are in your books.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-stopwatch"></i></div> <!--change the fa-stopwatch to a different icon later.-->
+                <div class="feature-icon"><i class="fas fa-book"></i></div>
                 <h3>Insight Library</h3>
                 <p style="color:var(--muted)">Once you have finished a book, write down the knowledge and perspective you've gained. Keep all of your insights in an interactive bookshelf.</p>
             </div>

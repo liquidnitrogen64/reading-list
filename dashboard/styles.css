@@ -1,0 +1,138 @@
+.dashboard-body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dashboard-header {
+    height: 60px;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    Background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+}
+
+.nav-links a.active {
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+.dashboard-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.left-column {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+/*sections*/
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-header h2, .status-section h2 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+/*reading list*/
+.reading-list-section {
+    height: 100%;
+}
+
+.tag-filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag-chip {
+    background: var(--accent-subtle);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.tag-chip.active {
+    background: var(--accent-primary);
+    color: #ffffff;
+    border-color: var(--accent-primary);
+}
+
+.reading-list-container, .status-container, .bookshelf-grid {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.empty-state {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.95rem;
+    text-align: center;
+    margin: auto 0;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(43, 38, 35, 0.4);
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-card {
+    width: min(100%, 32rem);
+    background: var(--bg-card);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
